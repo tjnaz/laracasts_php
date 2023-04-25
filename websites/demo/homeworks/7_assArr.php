@@ -40,7 +40,7 @@
 
   ?>
 
-  <h1>7 - Associative Array</h1>
+    <h1>7 - Associative Array</h1>
     <h5><a href="../index.php">Go Home</a></h5>
     <h5><a href="../hw.html">Go to Homework</a></h5>
 
