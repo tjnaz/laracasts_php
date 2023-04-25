@@ -94,7 +94,6 @@
   </ul>
 
 
-  <h2><a href="./hw.html">Homework Directory</a></h2>
 </body>
 
 </html>
