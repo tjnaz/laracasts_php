@@ -11,9 +11,11 @@
 <body>
   <?php
     $userNames = ['aleena', 'mary', 'tj'];
-    ?>
+  ?>
 
   <h1>6 - Array</h1>
+    <h5><a href="../index.php">Go Home</a></h5>
+    <h5><a href="../hw.html">Go to Homework</a></h5>
   <p>Create an array of any three usernames - perhaps for a "Top Performing Users" section of your website. Then, create
     a loop that displays each username within a list item.</p>
   <ul>
