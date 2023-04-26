@@ -6,7 +6,7 @@
 <html lang="en">
 
   <head>
-    <title>Demo</title>
+    <title>9 - Lamda Functions</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="../style.css" rel="stylesheet">
@@ -247,11 +247,11 @@
     }
 
     $filteredBooks = array_filter(
-        $books,
-        function ($book) {
+        $books, function ($book) {
             $key = 'year';
             $value = 1970;
-            return $book[$key] >= $value;
+            $value2 = 1990;
+            return $book[$key] >= $value && $book[$key] <= $value2;
         }
     );
 
@@ -261,7 +261,7 @@
     <h5><a href="../index.php">Go Home</a></h5>
     <h5><a href="../hw.html">Go to Homework</a></h5>
 
-    <p>Update your book filtering logic from this episode to only display books that were first published between the years 1950 and 2020. Hint - the PHP equivalent of "and" is &&.</p>
+    <p>Update your book filtering logic from this episode to only display books that were first published between the years 1970 and 1990. Hint - the PHP equivalent of "and" is &&.</p>
 
     <h2>All Books</h2>
     <ol>
@@ -276,14 +276,22 @@
     <?php
     $key = 'year';
     $value = 1970;
+    $value2 = 1990;
     ?>
 
-    <h2>Filtered by the <?php echo $key ?> >= <?php echo $value ?></h2>
+    <h2>Filtered by the <?php echo $key ?> <?php echo "between $value and $value2" ?></h2>
     <ol>
       <?php foreach ($filteredBooks as $book) : ?>
       <li>
             <?php echo $book['name'] ?>
+        <ul>
+          <li>
             <?php echo $book['author'] ?>
+          </li>
+          <li>
+            <?php echo $book[$key] ?>
+          </li>
+        </ul>
       </li>
       <?php endforeach; ?>
     </ol>
