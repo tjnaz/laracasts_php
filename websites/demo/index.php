@@ -231,20 +231,21 @@
     ]
     ];
 
-  function filterByAuthor(
-      $books,
-      $author
-  ) {
-      $filteredBooks = [];
-      foreach($books as $book) {
-          if($book['author'] === $author) {
-              $filteredBooks[] = $book;
-          }
-      }
-      return $filteredBooks;
-  }
+    function filter(
+        $books,
+        $key,
+        $value
+    ) {
+        $filteredBooks = [];
+        foreach($books as $book) {
+            if($book[$key] === $value) {
+                $filteredBooks[] = $book;
+            }
+        }
+        return $filteredBooks;
+    }
 
-  ?>
+    ?>
 
   <h1>
     Book Recommendations
@@ -254,23 +255,31 @@
   <ul>
     <?php foreach ($books as $book) : ?>
     <li>
-      <a href="<?= $book['purchaseURL'] ?>">
+
+      <a href="<?php echo $book['bookURL'] ?>">
         <?php echo "Name: " . $book['name'] ?>
-        <?php echo "Author: " . $book['author'] ?>
       </a>
+
+        <?php echo "Author: " . $book['author'] ?>
     </li>
     <?php endforeach; ?>
   </ul>
 
-    <?php $filteredAuthor = 'Ernest Hemingway' ?>
-    <h2>Filtered by author = <?= $filteredAuthor ?></h2>
+    <?php 
+    $key = 'author';
+    $value = 'J.D. Salinger' 
+    ?>
+    <h2>Filtered by <?php echo $key ?> = <?php echo $value ?></h2>
   <ul>
-    <?php foreach (filterByAuthor($books, $filteredAuthor) as $book) : ?>
+
+    <?php foreach (filter($books, $key, $value) as $book) : ?>
     <li>
-      <a href="<?= $book['purchaseURL'] ?>">
+
+      <a href="<?php echo $book['bookURL'] ?>">
         <?php echo "Name: " . $book['name'] ?>
-        <?php echo "Author: " . $book['author'] ?>
       </a>
+
+        <?php echo "Author: " . $book[$key] ?>
     </li>
     <?php endforeach; ?>
   </ul>
