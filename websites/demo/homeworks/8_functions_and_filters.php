@@ -1,3 +1,7 @@
+<!-- ************ -->
+<!-- [2023-04-25] -->
+<!-- ************ -->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -44,20 +48,20 @@
     ["name" => "Parasite", "year" => 2019]
     ];
 
-  function filterByYear(
-      $movies,
-      $year
-  ) {
-      $filteredMovies = [];
-      foreach($movies as $movie) {
-          if($movie['year'] >= $year) {
-              $filteredMovies[] = $movie;
-          }
-      }
-      return $filteredMovies;
-  }
+    function filterByYear(
+        $movies,
+        $year
+    ) {
+        $filteredMovies = [];
+        foreach($movies as $movie) {
+            if($movie['year'] >= $year) {
+                $filteredMovies[] = $movie;
+            }
+        }
+        return $filteredMovies;
+    }
 
-  ?>
+    ?>
 
   <h1>8 - Functions and Filters</h1>
   <h5><a href="../index.php">Go Home</a></h5>
@@ -80,7 +84,7 @@
   </ul>
 
     <?php $year = 2000; ?>
-    <h2>Filtered by year of release = <?= $year ?></h2>
+    <h2>Filtered by year of release = <?php echo $year ?></h2>
 
   <ul>
     <?php foreach (filterByYear($movies, $year) as $movie) : ?>
